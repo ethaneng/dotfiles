@@ -7,6 +7,8 @@ local config = wezterm.config_builder()
 -- This is where you actually apply your config choices
 
 -- Appearance
+config.initial_cols = 120
+config.initial_rows = 30
 config.color_scheme = "Catppuccin Mocha"
 config.window_background_opacity = 0.98
 config.macos_window_background_blur = 40
@@ -16,8 +18,22 @@ config.window_decorations = "RESIZE"
 config.window_padding = {
 	left = "5pt",
 	right = "5pt",
-	top = "5pt",
+	top = "10pt",
 	bottom = "5pt",
+}
+config.window_frame = {
+	-- border_left_width = "1cell",
+	-- border_left_color = "#b4befe",
+
+  border_right_width = "1cell",
+	border_right_color = "#b4befe",
+  -- border_right_color = "#a6e3a1",
+
+  -- border_bottom_height = "0.5cell",
+	-- border_bottom_color = "#f5c2e7",
+
+	-- border_top_height = "0.5cell",
+	-- border_top_color = "#fab387",
 }
 -- config.hide_tab_bar_if_only_one_tab = true
 -- config.show_tab_index_in_tab_bar = true
