@@ -21,3 +21,4 @@ map('n', '<leader>ld', ':cd ~/dotfiles <cr>')
 map('n', '<leader>lh', ':cd ~ <cr>')
 map('n', '<leader>lr', ':cd ~/repos <cr>')
 
+map('n', '<space>e', require('nvim-tree.api').tree.toggle, {desc = 'File [e]xplorer'})
