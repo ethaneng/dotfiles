@@ -38,7 +38,15 @@ return {
   opts = function()
     local conf = require "nvchad.configs.nvimtree"
     conf.on_attach = my_on_attach
+    conf.hijack_cursor = true
+    conf.disable_netrw = true
+    conf.hijack_unnamed_buffer_when_opening = true
     conf.sync_root_with_cwd = true
+    conf.actions.change_dir = {
+      enable = true,
+      global = true,
+      restrict_above_cwd = false
+    }
     conf.view.relativenumber = true
     conf.view.float = {
       enable = true,
@@ -50,7 +58,7 @@ return {
         local col = math.floor((screen_width - window_width) / 2)
         local row = math.floor((screen_height - window_height) / 2)
         return {
-          relative = "editor",
+          relative = "win",
           width = window_width,
           height = window_height,
           col = col,

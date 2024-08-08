@@ -4,65 +4,17 @@ local wezterm = require("wezterm")
 -- This will hold the configuration.
 local config = wezterm.config_builder()
 
--- This is where you actually apply your config choices
+-- Tab Bar
+config.hide_tab_bar_if_only_one_tab = true
+config.show_tab_index_in_tab_bar = true
+config.use_fancy_tab_bar = false
+config.enable_tab_bar = true
 
--- Appearance
-config.initial_cols = 120
-config.initial_rows = 30
-config.color_scheme = "Catppuccin Mocha"
-config.window_background_opacity = 0.98
-config.macos_window_background_blur = 40
--- config.font = wezterm.font("JetBrains Mono")
-config.font = wezterm.font("JetBrains Mono")
-config.window_decorations = "RESIZE"
-config.window_padding = {
-	left = "5pt",
-	right = "5pt",
-	top = "10pt",
-	bottom = "5pt",
-}
-config.window_frame = {
-	-- border_left_width = "1cell",
-	-- border_left_color = "#b4befe",
-
-  border_right_width = "1cell",
-	border_right_color = "#b4befe",
-  -- border_right_color = "#a6e3a1",
-
-  -- border_bottom_height = "0.5cell",
-	-- border_bottom_color = "#f5c2e7",
-
-	-- border_top_height = "0.5cell",
-	-- border_top_color = "#fab387",
-}
--- config.hide_tab_bar_if_only_one_tab = true
--- config.show_tab_index_in_tab_bar = true
--- config.use_fancy_tab_bar = false
--- config.default_cursor_style = "BlinkingBlock"
-config.enable_tab_bar = false
-
--- Smart splits, re-enable if not using tmux
--- local smart_splits = wezterm.plugin.require("https://github.com/mrjones2014/smart-splits.nvim")
--- smart_splits.apply_to_config(config, {
--- 	-- the default config is here, if you'd like to use the default keys,
--- 	-- you can omit this configuration table parameter and just use
--- 	-- smart_splits.apply_to_config(config)
---
--- 	-- directional keys to use in order of: left, down, up, right
--- 	direction_keys = { "h", "j", "k", "l" },
--- 	-- modifier keys to combine with direction_keys
--- 	modifiers = {
--- 		move = "CTRL", -- modifier to use for pane movement, e.g. CTRL+h to move left
--- 		resize = "META", -- modifier to use for pane resize, e.g. META+h to resize to the left
--- 	},
--- })
-
--- Keymaps
-config.keys = {
-	-- Disable tab keybinds
-	{ key = "t", mods = "CMD", action = wezterm.action.DisableDefaultAssignment },
-	{ key = "w", mods = "CMD", action = wezterm.action.DisableDefaultAssignment },
-}
+-- Custom Modules
+require('modules/appearance').apply_to_config(config)
+require('modules/smart-splits').apply_to_config(config)
+require('modules/mappings').apply_to_config(config)
+require('modules/zen-mode').apply_to_config(config)
 
 -- and finally, return the configuration to wezterm
 return config

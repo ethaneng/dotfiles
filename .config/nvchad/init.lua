@@ -35,7 +35,8 @@ dofile(vim.g.base46_cache .. "defaults")
 dofile(vim.g.base46_cache .. "statusline")
 
 require "nvchad.autocmds"
-require 'autocmds'
+-- require("leap").create_default_mappings()
+-- require 'autocmds'
 
 vim.schedule(function()
   require "mappings"
