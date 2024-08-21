@@ -8,7 +8,7 @@ M.ui = {
   theme = "bearded-arc",
   transparency = true,
   telescope = {
-    style = "bordered"
+    style = "bordered",
   },
 
   hl_override = {
@@ -31,13 +31,20 @@ M.ui = {
       bg = { "black", 0 },
     },
     WinSeparator = {
-      fg = {'blue', 0},
-      bg = {'black', 0}
-    }
+      fg = { "blue", 0 },
+      bg = { "black", 0 },
+    },
+    CursorLine = {
+      bg = { "yellow", -50 },
+    },
+    Cursor = {
+      fg = { "white", 20 },
+      bg = { "yellow", -30 },
+    },
   },
   nvdash = {
     load_on_startup = true,
-    header = require('misc/headers/sharingan'),
+    header = require "misc/headers/sharingan",
     buttons = {
       { "  Find File", "Spc f f", "Telescope find files" },
       { "󰈚  Recent Files", "Spc f r", "Telescope find recent files" },

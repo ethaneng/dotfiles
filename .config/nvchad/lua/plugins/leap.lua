@@ -3,7 +3,10 @@ return {
   lazy = false,
   dependencies = { "tpope/vim-repeat" },
   config = function()
-    local leap = require "leap"
-    leap.create_default_mappings()
+    local map = vim.keymap.set
+    map('n', 's', '<Plug>(leap-forward)')
+    map('n', 'S', '<Plug>(leap-backward)')
+    require('leap.user').set_repeat_keys('<enter>', '<backspace>')
+    -- leap.create_default_mappings()
   end,
 }
