@@ -44,7 +44,7 @@ M.ui = {
   },
   nvdash = {
     load_on_startup = true,
-    header = require "misc/headers/sharingan",
+    header = require "misc/headers/hydra",
     buttons = {
       { "  Find File", "Spc f f", "Telescope find files" },
       { "󰈚  Recent Files", "Spc f r", "Telescope find recent files" },
