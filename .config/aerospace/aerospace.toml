@@ -36,7 +36,7 @@ default-root-container-orientation = 'auto'
 # See https://nikitabobko.github.io/AeroSpace/guide#on-focus-changed-callbacks
 # See https://nikitabobko.github.io/AeroSpace/commands#move-mouse
 # Fallback value (if you omit the key): on-focused-monitor-changed = []
-on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
+on-focused-monitor-changed = ['move-mouse window-force-center']
 
 # You can effectively turn off macOS "Hide application" (cmd-h) feature by toggling this flag
 # Useful if you don't use this macOS feature, but accidentally hit cmd-h or cmd-alt-h key
@@ -56,12 +56,12 @@ preset = 'qwerty'
 #                 Monitor pattern is the same as for 'workspace-to-monitor-force-assignment'.
 #                 See: https://nikitabobko.github.io/AeroSpace/guide#assign-workspaces-to-monitors
 [gaps]
-inner.horizontal = 15
-inner.vertical =   15
-outer.left =       15
-outer.bottom =     15
-outer.top =        15
-outer.right =      15
+inner.horizontal = 10 
+inner.vertical =   10 
+outer.left =       5 
+outer.bottom =     5 
+outer.top =        5 
+outer.right =      5 
 
 # 'main' binding mode declaration
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
@@ -98,10 +98,10 @@ ctrl-alt-shift-slash = 'layout tiles horizontal vertical'
 ctrl-alt-shift-comma = 'layout accordion horizontal vertical'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#focus
-ctrl-alt-shift-h = 'focus left'
-ctrl-alt-shift-j = 'focus down'
-ctrl-alt-shift-k = 'focus up'
-ctrl-alt-shift-l = 'focus right'
+ctrl-alt-shift-h = 'focus left --boundaries-action wrap-around-the-workspace'
+ctrl-alt-shift-j = 'focus down --boundaries-action wrap-around-the-workspace'
+ctrl-alt-shift-k = 'focus up --boundaries-action wrap-around-the-workspace'
+ctrl-alt-shift-l = 'focus right --boundaries-action wrap-around-the-workspace' 
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move
 ctrl-alt-shift-cmd-h = 'move left'
@@ -114,16 +114,27 @@ ctrl-alt-shift-minus = 'resize smart -50'
 ctrl-alt-shift-equal = 'resize smart +50'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace
-ctrl-alt-shift-m = 'workspace M' #INFO: main workspace
 ctrl-alt-shift-c = 'workspace C' #INFO: comms workspace
 ctrl-alt-shift-t = 'workspace T' #INFO: terminal workspace
 ctrl-alt-shift-b = 'workspace B' #INFO: browser workspace
+ctrl-alt-shift-d = 'workspace D' #INFO: desktop workspace
+ctrl-alt-shift-1 = 'workspace 1' #INFO: 1 workspace
+ctrl-alt-shift-2 = 'workspace 2' #INFO: 2 workspace
+ctrl-alt-shift-3 = 'workspace 3' #INFO: 3 workspace
+ctrl-alt-shift-4 = 'workspace 4' #INFO: 4 workspace
+ctrl-alt-shift-5 = 'workspace 5' #INFO: 5 workspace
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
 ctrl-alt-shift-cmd-m = 'move-node-to-workspace M'
 ctrl-alt-shift-cmd-c = 'move-node-to-workspace C'
 ctrl-alt-shift-cmd-t = 'move-node-to-workspace T'
 ctrl-alt-shift-cmd-b = 'move-node-to-workspace B'
+ctrl-alt-shift-cmd-d = 'move-node-to-workspace D'
+ctrl-alt-shift-cmd-1 = 'move-node-to-workspace 1'
+ctrl-alt-shift-cmd-2 = 'move-node-to-workspace 2'
+ctrl-alt-shift-cmd-3 = 'move-node-to-workspace 3'
+ctrl-alt-shift-cmd-4 = 'move-node-to-workspace 4'
+ctrl-alt-shift-cmd-5 = 'move-node-to-workspace 5'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
 ctrl-alt-shift-tab = 'workspace-back-and-forth'
@@ -132,6 +143,31 @@ ctrl-alt-shift-cmd-tab = 'move-workspace-to-monitor --wrap-around next'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#mode
 ctrl-alt-shift-semicolon = 'mode service'
+
+# toggle fullscreen 
+ctrl-alt-shift-cmd-f = 'layout tiling'
+ctrl-alt-shift-f = ['layout floating', 'resize width 800', 'resize height 600'] # toggle floating tiling
+
+# [[on-window-detected]]
+# if.app-id = 'com.apple.systempreferences'
+# if.app-name-regex-substring = 'settings'
+# if.window-title-regex-substring = 'substring'
+# if.workspace = 'workspace-name'
+# if.during-aerospace-startup = true
+# check-further-callbacks = true
+# run = ['layout floating', 'move-node-to-workspace S']  # The callback itself
+
+# default behavior for new windows:
+# [[on-window-detected]]
+# run = ['layout floating']
+
+[[on-window-detected]]
+if.window-title-regex-substring = 'Little Arc'
+run = ['layout floating']
+
+[[on-window-detected]]
+if.window-title-regex-substring = 'Shottr'
+run = ['layout floating']
 
 # 'service' binding mode declaration.
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
