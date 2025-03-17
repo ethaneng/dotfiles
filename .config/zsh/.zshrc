@@ -84,7 +84,7 @@ HIST_STAMPS="dd/mm/yyyy"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 
-export ZOXIDE_CMD_OVERRIDE="cd"
+export ZOXIDE_CMD_OVERRIDE="z"
 
 plugins=(
   git
@@ -112,7 +112,8 @@ export LANG=en_US.UTF-8
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='vim'
 else
-   export EDITOR='nvim'
+   # export EDITOR='nvim'
+   export EDITOR='zed'
 fi
 
 

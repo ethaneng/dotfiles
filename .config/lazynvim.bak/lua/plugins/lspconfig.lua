@@ -1,3 +1,4 @@
+local util = require("lspconfig.util")
 return {
   "neovim/nvim-lspconfig",
   ---@class PluginLspOpts
@@ -14,6 +15,13 @@ return {
           },
         },
       },
+    },
+    volar = {
+      filetypes = {
+        "typescript",
+        "vue",
+      },
+      root_dir = util.root_pattern("src/App.vue"),
     },
   },
 }
