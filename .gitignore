@@ -3,3 +3,5 @@
 .config/zsh/.zsh_sessions
 .config/zsh/.zsh_history
 .config/zsh/.zcompdump*
+.aider*
+.config/zsh/environment.zsh
