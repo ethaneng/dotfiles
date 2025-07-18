@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "Hub": {
+      "command": "mcp-hub",
+      "url": "http://localhost:37373/mcp"
+    }
+  },
+  "theme": "Dracula",
+  "selectedAuthType": "oauth-personal"
+}

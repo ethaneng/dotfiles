@@ -1,0 +1,30 @@
+[
+  {
+    "sessionId": "91eff5ef-b55d-454f-8ddd-11ec10c63b33",
+    "messageId": 0,
+    "type": "user",
+    "message": "/mcp",
+    "timestamp": "2025-06-27T09:00:43.490Z"
+  },
+  {
+    "sessionId": "5448cff1-da81-4201-89f7-f6d20d9e141b",
+    "messageId": 0,
+    "type": "user",
+    "message": "/mcp",
+    "timestamp": "2025-06-30T04:38:55.265Z"
+  },
+  {
+    "sessionId": "5448cff1-da81-4201-89f7-f6d20d9e141b",
+    "messageId": 1,
+    "type": "user",
+    "message": "whats the time in sapporo right now",
+    "timestamp": "2025-06-30T04:39:07.257Z"
+  },
+  {
+    "sessionId": "0d0f63c9-e696-460e-bca1-7973f6d327a7",
+    "messageId": 0,
+    "type": "user",
+    "message": "when I open nvim in this dir neo-tree hides all the folder by default. I assume this is because all the child dirs are hidden because they are dotfiles. How can I make an exception for this dir",
+    "timestamp": "2025-07-09T07:43:12.884Z"
+  }
+]

@@ -12,7 +12,6 @@ config.enable_tab_bar = true
 
 -- Custom Modules
 require("modules/appearance").apply_to_config(config)
--- require('modules/smart-splits').apply_to_config(config)
 -- require("modules/mappings").apply_to_config(config)
 require("modules/zen-mode").apply_to_config(config)
 
