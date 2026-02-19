@@ -1,1 +1,11 @@
-# Put starship config here
+[aws]
+style = "bold yellow"
+symbol = "☁ "
+format = "[$symbol$profile@$region]($style) "
+
+[custom.gh_user]
+command = "awk '/^github.com:/{found=1} found && /^    user:/{print $2; exit}' ~/.config/gh/hosts.yml"
+when = "test -f ~/.config/gh/hosts.yml"
+symbol = " "
+style = "bold cyan"
+format = "[$symbol$output]($style) "
