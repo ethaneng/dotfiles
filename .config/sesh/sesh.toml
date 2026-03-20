@@ -1,0 +1,25 @@
+blacklist = ["scratch"]
+
+[[session]]
+name = "Dotfiles"
+path = "~/dotfiles/.config"
+startup_command = "nvim ."
+
+[[session]]
+name = "Nvim Config"
+path = "~/dotfiles/.config/lazynvim/"
+startup_command = "nvim ."
+
+[[session]]
+name = "Tmux Config"
+path = "~/dotfiles/.config/tmux"
+startup_command = "nvim ."
+
+[[session]]
+name = "Zsh Config"
+path = "~/dotfiles/.config/zsh"
+startup_command = "nvim ."
+
+[[session]]
+name = "Repos"
+path = "~/repos"

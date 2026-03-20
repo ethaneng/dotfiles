@@ -1,0 +1,40 @@
+{
+  "tools": [
+    {
+      "name": "Lazy Git",
+      "command": "lazygit",
+      "description": "Simple terminal UI for git commands",
+      "tags": ["git", "tui"]
+    },
+    {
+      "name": "Lazy Docker",
+      "command": "lazydocker",
+      "description": "Simple terminal UI for managing docker",
+      "tags": ["docker", "tui"]
+    },
+    {
+      "name": "Wishlist",
+      "command": "wishlist",
+      "description": "SSH Connection Manager",
+      "tags": ["ssh", "manager", "tui"]
+    },
+    {
+      "name": "Tmux Picker",
+      "command": "ts",
+      "description": "Tmux Session Picker",
+      "tags": ["tmux", "picker"]
+    },
+    {
+      "name": "Star Wars ASCII Movie",
+      "command": "ssh starwarstel.net",
+      "description": "Watch Star Wars ASCII Movie",
+      "tags": ["animation", "star wars"]
+    },
+    {
+      "name": "BTOP",
+      "command": "btop",
+      "description": "Resource monitor",
+      "tags": ["monitor", "tui"]
+    }
+  ]
+}

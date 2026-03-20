@@ -1,0 +1,4 @@
+config-file = theme
+config-file = keybinds
+
+background-opacity = 1.00

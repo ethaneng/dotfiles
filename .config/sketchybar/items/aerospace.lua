@@ -3,21 +3,24 @@ local settings = require("settings")
 local app_icons = require("helpers.app_icons")
 
 local query_workspaces =
-	"aerospace list-workspaces --all --format '%{workspace}%{monitor-appkit-nsscreen-screens-id}' --json"
+	"hyprspace list-workspaces --all --format '%{workspace}%{monitor-appkit-nsscreen-screens-id}' --json"
 
 -- Root is used to handle event subscriptions
 local root = sbar.add("item", { drawing = false })
 local workspaces = {}
+
+-- Define the desired workspace order
+local workspace_order = { "q", "w", "e", "r", "t", "y", "u", "i", "o", "p" }
 
 local fullscreened_icon = "󰊓 "
 
 local function withWindows(f)
 	local open_windows = {}
 	local get_windows =
-		"aerospace list-windows --monitor all --format '%{workspace}%{app-name}%{window-is-fullscreen}' --json"
+		"hyprspace list-windows --monitor all --format '%{workspace}%{app-name}%{window-is-fullscreen}' --json"
 	local query_visible_workspaces =
-		"aerospace list-workspaces --visible --monitor all --format '%{workspace}%{monitor-appkit-nsscreen-screens-id}' --json"
-	local get_focus_workspaces = "aerospace list-workspaces --focused"
+		"hyprspace list-workspaces --visible --monitor all --format '%{workspace}%{monitor-appkit-nsscreen-screens-id}' --json"
+	local get_focus_workspaces = "hyprspace list-workspaces --focused"
 	sbar.exec(get_windows, function(workspace_and_windows)
 		for _, entry in ipairs(workspace_and_windows) do
 			local workspace_index = entry.workspace
@@ -122,53 +125,52 @@ local function updateWorkspaceMonitor()
 	end)
 end
 
-sbar.exec(query_workspaces, function(workspaces_and_monitors)
-	for _, entry in ipairs(workspaces_and_monitors) do
-		local workspace_index = entry.workspace
+-- Create workspaces in the specified order only
+for _, workspace_index in ipairs(workspace_order) do
+	local workspace = sbar.add("item", {
+		background = {
+			color = colors.bg1,
+			drawing = true,
+		},
+		click_script = "hyprspace workspace " .. workspace_index,
+		drawing = true, -- Always show these workspaces
+		icon = {
+			color = colors.with_alpha(colors.white, 0.3),
+			drawing = true,
+			font = { family = settings.font.numbers },
+			highlight_color = colors.white,
+			padding_left = 5,
+			padding_right = 4,
+			string = workspace_index,
+		},
+		label = {
+			color = colors.with_alpha(colors.white, 0.3),
+			drawing = true,
+			font = "sketchybar-app-font:Regular:16.0",
+			highlight_color = colors.white,
+			padding_left = 2,
+			padding_right = 12,
+			y_offset = -1,
+		},
+	})
 
-		local workspace = sbar.add("item", {
-			background = {
-				color = colors.bg1,
-				drawing = true,
-			},
-			click_script = "aerospace workspace " .. workspace_index,
-			drawing = false, -- Hide all items at first
-			icon = {
-				color = colors.with_alpha(colors.white, 0.3),
-				drawing = true,
-				font = { family = settings.font.numbers },
-				highlight_color = colors.white,
-				padding_left = 5,
-				padding_right = 4,
-				string = workspace_index,
-			},
-			label = {
-				color = colors.with_alpha(colors.white, 0.3),
-				drawing = true,
-				font = "sketchybar-app-font:Regular:16.0",
-				highlight_color = colors.white,
-				padding_left = 2,
-				padding_right = 12,
-				y_offset = -1,
-			},
-		})
+	workspaces[workspace_index] = workspace
 
-		workspaces[workspace_index] = workspace
+	workspace:subscribe("aerospace_workspace_change", function(env)
+		local focused_workspace = env.FOCUSED_WORKSPACE
+		local is_focused = focused_workspace == workspace_index
 
-		workspace:subscribe("aerospace_workspace_change", function(env)
-			local focused_workspace = env.FOCUSED_WORKSPACE
-			local is_focused = focused_workspace == workspace_index
-
-			sbar.animate("tanh", 10, function()
-				workspace:set({
-					icon = { highlight = is_focused },
-					label = { highlight = is_focused },
-					blur_radius = 30,
-				})
-			end)
+		sbar.animate("tanh", 10, function()
+			workspace:set({
+				icon = { highlight = is_focused },
+				label = { highlight = is_focused },
+				blur_radius = 30,
+			})
 		end)
-	end
+	end)
+end
 
+sbar.exec(query_workspaces, function(workspaces_and_monitors)
 	-- Initial setup
 	updateWindows()
 	updateWorkspaceMonitor()
@@ -192,7 +194,7 @@ sbar.exec(query_workspaces, function(workspaces_and_monitors)
 		updateWindows()
 	end)
 
-	sbar.exec("aerospace list-workspaces --focused", function(focused_workspace)
+	sbar.exec("hyprspace list-workspaces --focused", function(focused_workspace)
 		local focused_workspace = focused_workspace:match("^%s*(.-)%s*$")
 		workspaces[focused_workspace]:set({
 			icon = { highlight = true },

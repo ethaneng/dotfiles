@@ -1,0 +1,371 @@
+# ################################################################ #
+# Rift Window Manager Configuration
+# ################################################################ #
+#
+# Ported from yabai + skhd configuration
+# All keybindings are native to rift (no skhd needed)
+#
+# Workspace System:
+#   0-9:   Project workspaces (p1-p10) → Alt+1 through Alt+0
+#   10-14: Fixed workspaces (y,u,i,o,p) → Alt+Y/U/I/O/P
+#
+
+[settings]
+# Animations (matching yabai: 0.1s ease_out_circ)
+animate = true
+animation_duration = 0.1
+animation_fps = 100.0
+
+# Spaces are managed by default (no need to toggle per-space)
+default_disable = false
+
+# Mouse behavior (matching yabai config)
+focus_follows_mouse = true
+mouse_follows_focus = false
+mouse_hides_on_focus = false
+
+# Prevent certain apps from stealing focus
+auto_focus_blacklist = [
+  "com.apple.Spotlight",
+  "com.raycast.macos",
+  "com.apple.dock",
+  "com.apple.SecurityAgent",
+]
+
+# Sketchybar integration via rift-cli event subscriptions
+run_on_start = [
+  "rift-cli subscribe cli --event workspace_changed --command sh --args -c --args 'sketchybar --trigger rift_workspace_changed RIFT_WORKSPACE_NAME=\"$RIFT_WORKSPACE_NAME\" RIFT_WORKSPACE_ID=\"$RIFT_WORKSPACE_ID\" RIFT_EVENT_JSON=\"$RIFT_EVENT_JSON\"'",
+  "rift-cli subscribe cli --event windows_changed --command sh --args -c --args 'sketchybar --trigger rift_windows_changed RIFT_WORKSPACE_NAME=\"$RIFT_WORKSPACE_NAME\" RIFT_WINDOW_COUNT=\"$RIFT_WINDOW_COUNT\" RIFT_WINDOWS=\"$RIFT_WINDOWS\" RIFT_EVENT_JSON=\"$RIFT_EVENT_JSON\"'",
+  "rift-cli subscribe cli --event window_title_changed --command sh --args -c --args 'sketchybar --trigger rift_windows_changed'",
+]
+
+# Auto-reload config on file changes
+hot_reload = true
+
+# ################################################################ #
+# Layout
+# ################################################################ #
+
+[settings.layout]
+mode = "scrolling"
+
+[settings.layout.stack]
+stack_offset = 40.0
+default_orientation = "same"
+
+[settings.layout.master_stack]
+master_ratio = 0.6
+master_count = 1
+master_side = "left"
+new_window_placement = "master"
+
+[settings.layout.scrolling]
+animate = false
+column_width_ratio = 0.8
+min_column_width_ratio = 0.3
+max_column_width_ratio = 0.9
+alignment = "center"
+focus_navigation_style = "anchored"
+
+[settings.layout.scrolling.gestures]
+enabled = false
+
+# ################################################################ #
+# Gaps (matching yabai: 12px all around)
+# ################################################################ #
+
+[settings.layout.gaps.outer]
+top = 48
+left = 12
+bottom = 12
+right = 12
+
+[settings.layout.gaps.inner]
+horizontal = 12
+vertical = 12
+
+# built-in display
+[settings.layout.gaps.per_display.37D8832A-2D66-02CA-B9F7-8F30A301B230.outer]
+top = 24
+left = 12
+bottom = 12
+right = 12
+
+# Per-display gap overrides
+# To find your display UUIDs, run: rift-cli query displays
+# Then uncomment and replace the UUID keys below.
+#
+# MacBook built-in display (20px top for sketchybar):
+# [settings.layout.gaps.per_display."YOUR-MACBOOK-UUID".outer]
+# top = 20
+# left = 12
+# bottom = 12
+# right = 12
+#
+# Samsung external display (55px top for sketchybar):
+# [settings.layout.gaps.per_display."YOUR-SAMSUNG-UUID".outer]
+# top = 55
+# left = 12
+# bottom = 12
+# right = 12
+
+# ################################################################ #
+# UI (experimental features)
+# ################################################################ #
+
+[settings.ui.menu_bar]
+enabled = true # Using sketchybar instead
+
+[settings.ui.stack_line]
+enabled = true
+# Placement for horizontal stacks: "top" or "bottom"
+horiz_placement = "top"
+# Placement for vertical stacks: "left" or "right"
+vert_placement = "left"
+# Line thickness in pixels
+thickness = 8.0
+# Gap between line and window edge in points
+spacing = 1.0
+
+[settings.ui.mission_control]
+enabled = false
+
+# ################################################################ #
+# Gestures
+# ################################################################ #
+
+[settings.gestures]
+enabled = false
+invert_horizontal_swipe = false
+swipe_vertical_tolerance = 0.4
+skip_empty = true
+fingers = 3
+distance_pct = 0.08
+haptics_enabled = true
+haptic_pattern = "level_change"
+
+# ################################################################ #
+# Window Snapping
+# ################################################################ #
+
+[settings.window_snapping]
+drag_swap_fraction = 0.3
+
+# ################################################################ #
+# Virtual Workspaces
+# ################################################################ #
+
+[virtual_workspaces]
+enabled = true
+default_workspace_count = 15
+auto_assign_windows = true
+preserve_focus_per_workspace = true
+workspace_auto_back_and_forth = false
+reapply_app_rules_on_title_change = false
+default_workspace = 0
+
+# Workspace names: 0-9 = project workspaces, 10-14 = fixed workspaces
+workspace_names = [
+  "p1",
+  "p2",
+  "p3",
+  "p4",
+  "p5",
+  "p6",
+  "p7",
+  "p8",
+  "p9",
+  "p10",
+  "y",
+  "u",
+  "i",
+  "o",
+  "p",
+]
+
+# Per-workspace layout overrides (uncomment to customize)
+# workspace_rules = [
+#   { workspace = 0, layout = "bsp" },
+#   { workspace = 10, layout = "master_stack" },
+# ]
+workspace_rules = []
+
+# ################################################################ #
+# App Rules (floating windows - ported from yabai rules.sh)
+# ################################################################ #
+
+# System Applications
+[[virtual_workspaces.app_rules]]
+app_id = "com.apple.systempreferences"
+floating = true
+
+[[virtual_workspaces.app_rules]]
+app_name = "System Settings"
+floating = true
+
+# Screenshot/Utility Apps
+[[virtual_workspaces.app_rules]]
+app_name = "Shottr"
+floating = true
+
+# Picture-in-Picture windows
+[[virtual_workspaces.app_rules]]
+title_regex = "Picture.in.Picture"
+floating = true
+
+# Reminders (float and manage)
+[[virtual_workspaces.app_rules]]
+title_regex = "[Rr]eminder"
+floating = true
+
+# Microsoft Teams meeting windows
+[[virtual_workspaces.app_rules]]
+title_regex = "[Nn]ew meeting.*[Mm]icrosoft [Tt]eams"
+floating = true
+
+# Leader Key windows
+[[virtual_workspaces.app_rules]]
+title_regex = "[Ll]eader [Kk]ey"
+floating = true
+
+# Claude
+# [[virtual_workspaces.app_rules]]
+# app_name = "Claude"
+# floating = true
+
+# Messages
+[[virtual_workspaces.app_rules]]
+app_id = "com.apple.MobileSMS"
+floating = true
+
+# AX Dialog windows should float by default
+[[virtual_workspaces.app_rules]]
+ax_subrole = "AXDialog"
+floating = true
+
+# --- Fixed workspace app assignments ---
+
+# Spotify → Y (workspace 10)
+[[virtual_workspaces.app_rules]]
+app_id = "com.spotify.client"
+workspace = 10
+
+# Outlook → I (workspace 12)
+[[virtual_workspaces.app_rules]]
+app_id = "com.microsoft.Outlook"
+workspace = 12
+
+# Teams → O (workspace 13)
+[[virtual_workspaces.app_rules]]
+app_id = "com.microsoft.teams2"
+workspace = 13
+
+# ################################################################ #
+# Modifier Combinations
+# ################################################################ #
+
+[modifier_combinations]
+hyper = "Alt + Shift"
+move = "Alt + Cmd"
+
+# ################################################################ #
+# Keybindings (ported from skhd)
+# ################################################################ #
+
+[keys]
+
+# --- Window Focus (alt + h/j/k/l) ---
+"Alt + H" = { move_focus = "left" }
+"Alt + J" = { move_focus = "down" }
+"Alt + K" = { move_focus = "up" }
+"Alt + L" = { move_focus = "right" }
+
+# --- Window Movement / Swap (alt+shift + h/j/k/l) ---
+"hyper + H" = { move_node = "left" }
+"hyper + J" = { move_node = "down" }
+"hyper + K" = { move_node = "up" }
+"hyper + L" = { move_node = "right" }
+
+# --- Project Workspaces (alt + 1-0 → workspace 0-9) ---
+"Alt + 1" = { switch_to_workspace = 0 }
+"Alt + 2" = { switch_to_workspace = 1 }
+"Alt + 3" = { switch_to_workspace = 2 }
+"Alt + 4" = { switch_to_workspace = 3 }
+"Alt + 5" = { switch_to_workspace = 4 }
+"Alt + 6" = { switch_to_workspace = 5 }
+"Alt + 7" = { switch_to_workspace = 6 }
+"Alt + 8" = { switch_to_workspace = 7 }
+"Alt + 9" = { switch_to_workspace = 8 }
+"Alt + 0" = { switch_to_workspace = 9 }
+
+# --- Fixed Workspaces (alt + y/u/i/o/p → workspace 10-14) ---
+"Alt + Y" = { switch_to_workspace = 10 }
+"Alt + U" = { switch_to_workspace = 11 }
+"Alt + I" = { switch_to_workspace = 12 }
+"Alt + O" = { switch_to_workspace = 13 }
+"Alt + P" = { switch_to_workspace = 14 }
+
+# --- Move Window to Project Workspace (alt+cmd + 1-0) ---
+"move + 1" = { move_window_to_workspace = 0 }
+"move + 2" = { move_window_to_workspace = 1 }
+"move + 3" = { move_window_to_workspace = 2 }
+"move + 4" = { move_window_to_workspace = 3 }
+"move + 5" = { move_window_to_workspace = 4 }
+"move + 6" = { move_window_to_workspace = 5 }
+"move + 7" = { move_window_to_workspace = 6 }
+"move + 8" = { move_window_to_workspace = 7 }
+"move + 9" = { move_window_to_workspace = 8 }
+"move + 0" = { move_window_to_workspace = 9 }
+
+# --- Move Window to Fixed Workspace (alt+cmd + y/u/i/o/p) ---
+"move + Y" = { move_window_to_workspace = 10 }
+"move + U" = { move_window_to_workspace = 11 }
+"move + I" = { move_window_to_workspace = 12 }
+"move + O" = { move_window_to_workspace = 13 }
+"move + P" = { move_window_to_workspace = 14 }
+
+# --- Workspace Navigation ---
+"Alt + Tab" = "switch_to_last_workspace"
+
+# --- Layout Switching ---
+"Alt + Ctrl + 1" = { set_workspace_layout = { mode = "traditional" } }
+"Alt + Ctrl + 2" = { set_workspace_layout = { mode = "master_stack" } }
+"Alt + Ctrl + 3" = { set_workspace_layout = { mode = "scrolling" } }
+
+# --- Stacking ---
+"Alt + Comma" = "toggle_stack"
+"Alt + Slash" = "toggle_orientation"
+
+# --- Window State ---
+"Alt + Z" = "toggle_fullscreen_within_gaps"
+# "Alt + Shift + F" = "toggle_fullscreen_within_gaps"
+"Alt + F" = "toggle_window_floating"
+"hyper + Space" = "toggle_focus_floating"
+
+# --- Stacking (traditional mode) ---
+"hyper + Left" = { join_window = "left" }
+"hyper + Right" = { join_window = "right" }
+"hyper + Up" = { join_window = "up" }
+"hyper + Down" = { join_window = "down" }
+"Alt + Ctrl + E" = "unjoin_windows"
+
+# --- Resize ---
+"Alt + Minus" = "resize_window_shrink"
+"Alt + Equal" = "resize_window_grow"
+
+# --- Multi-Monitor ---
+"Shift + Ctrl + K" = { move_window_to_display = { selector = "up" } }
+"Shift + Ctrl + J" = { move_window_to_display = { selector = "down" } }
+"Alt + Ctrl + Left" = { focus_display = "left" }
+"Alt + Ctrl + Right" = { focus_display = "right" }
+
+# --- Terminal ---
+# "Alt + Enter" = { exec = ["/bin/bash", "-c", "open -na WezTerm"] }
+
+# --- Space Activation Toggle ---
+"Alt + Ctrl + Z" = "toggle_space_activated"
+
+# --- Debug ---
+"hyper + D" = "debug"
+"Alt + Ctrl + S" = "serialize"
+"Alt + Ctrl + Q" = "save_and_exit"

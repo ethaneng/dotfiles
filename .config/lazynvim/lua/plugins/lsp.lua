@@ -1,57 +1,65 @@
+-- Load individual LSP server configurations
+local function load_lsp_config(server_name)
+  local ok, config = pcall(require, "plugins.lspconfigs." .. server_name)
+  if not ok then
+    vim.notify("Failed to load LSP config for " .. server_name .. ": " .. config, vim.log.levels.WARN)
+    return {}
+  end
+  return config
+end
+
+-- Build servers table by loading individual configs
+local servers = {}
+local setup_functions = {}
+
+-- Load yamlls config
+local yamlls_config = load_lsp_config("yamlls")
+if yamlls_config then
+  servers.yamlls = yamlls_config
+end
+
+-- Load tailwindcss config
+local tailwindcss_config = load_lsp_config("tailwindcss")
+if tailwindcss_config then
+  servers.tailwindcss = tailwindcss_config.server_config or {}
+  if tailwindcss_config.setup_function then
+    setup_functions.tailwindcss = tailwindcss_config.setup_function
+  end
+end
+
+-- Load marksman config
+local marksman_config = load_lsp_config("marksman")
+if marksman_config then
+  servers.marksman = marksman_config
+end
+
 return {
-  "neovim/nvim-lspconfig",
-  ---@class PluginLspOpts
-  opts = {
-    inlay_hints = {
-      enabled = false,
-    },
-    servers = {
-      tailwindcss = {
-        -- exclude a filetype from the default_config
-        filetypes_exclude = { "markdown" },
-        -- add additional filetypes to the default_config
-        filetypes_include = {},
-        -- to fully override the default_config, change the below
-        -- filetypes = {}
-        settings = {
-          tailwindCSS = {
-            experimental = {
-              classRegex = {
-                { "cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]" },
-                { "cx\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)" },
-                { "cn\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]" },
-                { "([a-zA-Z0-9\\-:]+)" },
-                { "\\b\\w+(?:ClassName|ClassNames)\\s*=\\s*", "[\"'`]([^\"'`]*).*?[\"'`]" },
-              },
-            },
-          },
-        },
+  {
+    "neovim/nvim-lspconfig",
+    version = "*",
+    ---@class PluginLspOpts
+    opts = {
+      inlay_hints = {
+        enabled = false,
       },
+      servers = servers,
+      setup = setup_functions,
     },
-    setup = {
-      tailwindcss = function(_, opts)
-        local tw = LazyVim.lsp.get_raw_config("tailwindcss")
-        opts.filetypes = opts.filetypes or {}
-        -- Add default filetypes
-        vim.list_extend(opts.filetypes, tw.default_config.filetypes)
-        -- Remove excluded filetypes
-        --- @param ft string
-        opts.filetypes = vim.tbl_filter(function(ft)
-          return not vim.tbl_contains(opts.filetypes_exclude or {}, ft)
-        end, opts.filetypes)
-        -- Additional settings for Phoenix projects
-        opts.settings = {
-          tailwindCSS = {
-            includeLanguages = {
-              elixir = "html-eex",
-              eelixir = "html-eex",
-              heex = "html-eex",
-            },
-          },
-        }
-        -- Add additional filetypes
-        vim.list_extend(opts.filetypes, opts.filetypes_include or {})
-      end,
-    },
+  },
+  {
+    "nvimtools/none-ls.nvim",
+    opts = function(_, opts)
+      local nls = require("null-ls")
+      opts.sources = opts.sources or {}
+
+      -- sets ups null-ls with the default sources and cfn_lint
+      table.insert(opts.sources, nls.builtins.diagnostics.cfn_lint)
+      table.insert(
+        opts.sources,
+        nls.builtins.diagnostics.cfn_lint.with({
+          filetypes = { "yaml", "json" }, -- only run with yaml and json files
+        })
+      )
+    end,
   },
 }

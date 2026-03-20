@@ -24,7 +24,14 @@ return {
         ["<C-e>"] = { "hide", "fallback" },
         ["<CR>"] = { "accept", "fallback" },
 
-        ["<Tab>"] = { "snippet_forward", "fallback" },
+        -- From https://github.com/folke/sidekick.nvim
+        ["<Tab>"] = {
+          "snippet_forward",
+          function()
+            return require("sidekick").nes_jump_or_apply()
+          end,
+          "fallback",
+        },
         ["<S-Tab>"] = { "snippet_backward", "fallback" },
 
         ["<Up>"] = { "select_prev", "fallback" },

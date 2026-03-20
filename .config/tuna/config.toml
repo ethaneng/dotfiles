@@ -1,0 +1,179 @@
+schemaVersion = 1
+
+[hotkeys]
+custom = []
+
+    [hotkeys.app.dictation]
+    carbonKeyCode = 9
+    carbonModifiers = 2048
+
+    [hotkeys.app.leaderMode]
+    carbonKeyCode = 49
+    carbonModifiers = 6912
+
+[[leaderMode.bindings]]
+key = 'o'
+label = 'Teams'
+url = 'tuna://run/path.%252FApplications%252FMicrosoft%2520Teams.app/Open'
+
+[[leaderMode.bindings]]
+key = 'i'
+label = 'Outlook'
+url = 'tuna://run/path.%252FApplications%252FMicrosoft%2520Outlook.app/Open'
+
+[[leaderMode.bindings]]
+key = 'y'
+label = 'Spotify'
+url = 'tuna://run/path.%252FApplications%252FSpotify.app/Open'
+
+[[leaderMode.bindings]]
+key = 'c'
+label = 'Code'
+url = 'tuna://run/TunaCore.AllApplicationsCatalog.OpenCode/Open'
+
+[[leaderMode.bindings]]
+iconPath = '/Applications/Raycast.app'
+key = 'n'
+label = 'Notes'
+url = 'tuna://run/url.raycast:%252F%252Fextensions%252Fraycast%252Fraycast-notes%252Fraycast-notes/Open%20URL'
+
+[[leaderMode.bindings]]
+key = 'e'
+label = 'Emoji'
+url = 'tuna://run/url.raycast:%252F%252Fextensions%252Fraycast%252Femoji-symbols%252Fsearch-emoji-symbols/Open%20URL'
+
+[[leaderMode.bindings]]
+iconPath = '/Applications/Claude.app'
+key = 'space'
+label = 'Claude'
+url = 'tuna://run/text.open%2520%2522%252FApplications%252FClaude.app%2522/Run%20Text%20as%20Shell%20Command'
+
+[[leaderMode.bindings]]
+iconPath = '/Applications/WezTerm.app'
+key = 'enter'
+label = 'Ghostty'
+url = 'tuna://run/TunaCore.AllApplicationsCatalog.Ghostty/Open'
+
+[[leaderMode.bindings]]
+iconPath = 'arrow.uturn.backward.square.fill'
+key = 'tab'
+label = 'Previous Workspace'
+url = 'tuna://run/text.yabai%2520-m%2520space%2520--focus%2520recent/Run%20Text%20as%20Shell%20Command'
+
+[[leaderMode.bindings]]
+key = 'f'
+label = 'Yazi (Finder)'
+url = 'tuna://run/text.wezterm%2520start%2520--%2520zsh%2520-ic%2520y/Run%20Text%20as%20Shell%20Command'
+
+[[leaderMode.bindings]]
+key = 't'
+label = 'Messages'
+url = 'tuna://run/path.%252FSystem%252FApplications%252FMessages.app/Open'
+
+[[leaderMode.bindings]]
+key = 'b'
+label = 'Browser'
+url = 'tuna://run/TunaCore.AllApplicationsCatalog.Zen%20Browser/Open'
+
+[[leaderMode.bindings]]
+key = 'u'
+label = 'Claude'
+url = 'tuna://run/TunaCore.AllApplicationsCatalog.Claude/Open'
+
+[[leaderMode.bindings]]
+key = 's'
+url = 'tuna://run/Tuna.Internal.ShelfCatalog.Shelf/Tuna.BasicActionsCatalog.Show'
+
+[[leaderMode.bindings]]
+key = 'l'
+label = 'Launch New Window'
+
+    [[leaderMode.bindings.children]]
+    iconPath = '/Applications/Zen Browser.app'
+    key = 'b'
+    label = 'Browser'
+    url = 'tuna://run/text.open%2520-n%2520%2522%252FApplications%252FZen%2520Browser.app%2522/Run%20Text%20as%20Shell%20Command'
+
+    [[leaderMode.bindings.children]]
+    iconPath = '/Applications/DBeaver.app'
+    key = 'd'
+    label = 'DBeaver'
+    url = 'tuna://run/text.open%2520-n%2520%2522%252FApplications%252FDBeaver.app%2522/Run%20Text%20as%20Shell%20Command'
+
+    [[leaderMode.bindings.children]]
+    iconPath = '/Applications/WezTerm.app'
+    key = 'enter'
+    label = 'WezTerm'
+    url = 'tuna://run/text.open%2520-n%2520%2522%252FApplications%252FWezTerm.app%2522/Run%20Text%20as%20Shell%20Command'
+
+    [[leaderMode.bindings.children]]
+    iconPath = '/System/Applications/Freeform.app'
+    key = 'f'
+    label = 'Freeform'
+    url = 'tuna://run/text.open%2520-n%2520%2522%252FSystem%252FApplications%252FFreeform.app%2522/Run%20Text%20as%20Shell%20Command'
+
+[[leaderMode.bindings]]
+key = 'm'
+label = 'Manage Extensions'
+
+    [[leaderMode.bindings.children]]
+    iconPath = 'inset.filled.leadinghalf.toptrailing.bottomtrailing.rectangle'
+    key = 'y'
+    label = 'Restart Yabai'
+    url = 'tuna://run/text.yabai%2520--restart-service/Run%20Text%20as%20Shell%20Command'
+
+    [[leaderMode.bindings.children]]
+    iconPath = 'inset.filled.leadinghalf.toptrailing.bottomtrailing.rectangle'
+    key = 'r'
+    label = 'Restart Rift'
+    url = 'tuna://run/text.rift%2520service%2520restart/Run%20Text%20as%20Shell%20Command'
+
+    [[leaderMode.bindings.children]]
+    iconPath = 'inset.filled.leadinghalf.toptrailing.bottomtrailing.rectangle'
+    key = 'b'
+    label = 'Restart Sketchybar'
+    url = 'tuna://run/text.brew%2520services%2520restart%2520sketchybar/Run%20Text%20as%20Shell%20Command'
+
+[[leaderMode.bindings]]
+iconPath = 'macwindow.on.rectangle'
+key = 'w'
+label = 'Window'
+
+    [[leaderMode.bindings.children]]
+    iconPath = 'move.3d'
+    key = 'm'
+    label = 'Move'
+
+        [[leaderMode.bindings.children.children]]
+        iconPath = 'arrowshape.left.circle.fill'
+        key = 'h'
+        label = 'Move window left'
+        url = 'tuna://run/text.%252Fopt%252Fhomebrew%252Fbin%252Frift-cli%2520execute%2520display%2520move-window%2520%25E2%2580%2594-direction%2520left/Run%20Text%20as%20Shell%20Command'
+
+        [[leaderMode.bindings.children.children]]
+        iconPath = 'arrowshape.down.circle.fill'
+        key = 'j'
+        label = 'Move window down'
+        url = 'tuna://run/text.%252Fopt%252Fhomebrew%252Fbin%252Frift-cli%2520execute%2520window%2520prev%2520&&%2520%252Fopt%252Fhomebrew%252Fbin%252Frift-cli%2520execute%2520display%2520move-window%2520%25E2%2580%2594-direction%2520down/Run%20Text%20as%20Shell%20Command'
+
+        [[leaderMode.bindings.children.children]]
+        iconPath = 'arrowshape.up.circle.fill'
+        key = 'k'
+        label = 'Move window up'
+        url = 'tuna://run/text.%252Fopt%252Fhomebrew%252Fbin%252Frift-cli%2520execute%2520display%2520move-window%2520%25E2%2580%2594-direction%2520up/Run%20Text%20as%20Shell%20Command'
+
+        [[leaderMode.bindings.children.children]]
+        iconPath = 'arrowshape.right.circle.fill'
+        key = 'l'
+        label = 'Move window right'
+        url = 'tuna://run/text.%252Fopt%252Fhomebrew%252Fbin%252Frift-cli%2520execute%2520display%2520move-window%2520%25E2%2580%2594-direction%2520right/Run%20Text%20as%20Shell%20Command'
+
+[settings]
+leaderModeThemeStyle = 'breadcrumb'
+themeIdentifier = 'com.brnbw.tuna.themes.NormieBar'
+
+[[catalogSettings]]
+catalogIdentifier = 'com.brnbw.tuna.themes.default'
+
+    [catalogSettings.values]
+    ThemeTint = 'system'

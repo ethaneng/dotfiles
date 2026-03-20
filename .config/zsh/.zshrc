@@ -16,9 +16,26 @@ function clean_compdump() {
   echo "Completion cache cleaned and regenerated."
 }
 
+# Benchmark zsh startup time (run this to test performance)
+function zsh-benchmark() {
+  echo "Running 10 shell startup benchmarks..."
+  for i in {1..10}; do
+    /usr/bin/time zsh -i -c exit 2>&1 | grep real
+  done | awk '{sum+=$2; count++} END {print "\nAverage startup time: " sum/count " seconds"}'
+}
+
 # Enable auto cd
 setopt AUTO_CD
 
-# Display system information on terminal startup
-nerdfetch
+# Display system information on terminal startup (disabled for faster startup)
+# Run 'nerdfetch' manually when you want to see system info
+# nerdfetch
 
+
+alias claude="/Users/ethan/.claude/local/claude"
+
+export PATH=$PATH:/Users/ethan/.spicetify
+export PATH="/opt/homebrew/opt/postgresql@17/bin:$PATH"
+
+# bun completions
+[ -s "/Users/ethan/.bun/_bun" ] && source "/Users/ethan/.bun/_bun"

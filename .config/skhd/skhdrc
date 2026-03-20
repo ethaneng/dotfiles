@@ -1,0 +1,49 @@
+#!/usr/bin/env sh
+
+# ################################################################ #
+# SKHD Configuration - Modular Structure
+# ################################################################ #
+#
+# This is the main skhd configuration file that loads modular configs.
+# Each module handles a specific category of keybindings for better
+# organization and maintainability.
+#
+# For more information:
+# https://github.com/koekeishiya/skhd
+#
+
+# Load modular configurations
+# Note: skhd .load directive uses paths relative to config directory
+# To reload config: skhd --reload
+
+# Window Focus Bindings
+# Focus windows in all directions with monitor wrap-around support
+.load "focus.conf"
+
+# Window Movement Bindings
+# Swap windows using predictable --swap command
+.load "move.conf"
+
+# Window Resize Bindings
+# Smart resize commands using split ratios
+.load "resize.conf"
+
+# Workspace Switching
+# Switch between labeled workspaces (y/u/i/o/p)
+.load "workspace.conf"
+
+# Move Windows to Workspaces
+# Move windows to workspaces with focus following
+.load "workspace_move.conf"
+
+# Layout Management
+# Toggle between different layout modes
+.load "layout.conf"
+
+# Multi-Monitor Operations
+# Focus and move windows between displays
+.load "monitor.conf"
+
+# Mode Declarations and Bindings
+# Service mode for advanced window management operations
+.load "modes.conf"

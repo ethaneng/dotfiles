@@ -1,6 +1,7 @@
 return {
   {
     "neovim/nvim-lspconfig",
+    version = "*",
     opts = {
       servers = {
         tailwindcss = {
@@ -14,13 +15,25 @@ return {
       },
       setup = {
         tailwindcss = function(_, opts)
-          local tw = LazyVim.lsp.get_raw_config("tailwindcss")
+          -- Define default filetypes for Tailwind CSS
+          local default_filetypes = {
+            "astro",
+            "html",
+            "css",
+            "javascript",
+            "javascriptreact",
+            "typescript",
+            "typescriptreact",
+            "vue",
+            "svelte",
+          }
+
           opts.filetypes = opts.filetypes or {}
 
           -- Add default filetypes
-          vim.list_extend(opts.filetypes, tw.default_config.filetypes)
+          vim.list_extend(opts.filetypes, default_filetypes)
 
-          -- Remove excluded filetypes
+          -- Remove excluded filetypesa
           --- @param ft string
           opts.filetypes = vim.tbl_filter(function(ft)
             return not vim.tbl_contains(opts.filetypes_exclude or {}, ft)
@@ -34,13 +47,11 @@ return {
                 eelixir = "html-eex",
                 heex = "html-eex",
               },
+              classFunctions = { "tw", "cva", "twMerge", "clsx", "cn", "tw\\.[a-z-]+" },
               experimental = {
                 classRegex = {
                   -- Add regex for common utilities
-                  { "cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]" },
-                  { "cn\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]" },
-                  { "twMerge\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]" },
-                  { "([%w_]*)classNames?%s*=%s*[\"']([^\"']*)[\"']", "[\"'`]([^\"'`]*).*?[\"'`]" },
+                  { "([%w_]*)[cC]lassNames?%s*=%s*[\"']([^\"']*)[\"']", "[\"'`]([^\"'`]*).*?[\"'`]" },
                 },
               },
               -- Add regex for string variables ending in className or classNames

@@ -1,0 +1,95 @@
+#!/usr/bin/env sh
+
+#
+# for this to work you must configure sudo such that
+# it will be able to run the command without password
+#
+# see this wiki page for information:
+#  - https://github.com/koekeishiya/yabai/wiki/Installing-yabai-(latest-release)#configure-scripting-addition
+
+# Load theme configuration
+source "${HOME}/.config/theme/colors.sh"
+
+yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
+sudo yabai --load-sa
+
+# Create spaces automatically if they don't exist
+# Ensures we always have at least 10 spaces for q/w/e/r/t/y/u/i/o/p workspaces
+SPACE_COUNT=$(yabai -m query --spaces | jq '. | length')
+REQUIRED_SPACES=10
+
+if [ "$SPACE_COUNT" -lt "$REQUIRED_SPACES" ]; then
+  SPACES_TO_CREATE=$((REQUIRED_SPACES - SPACE_COUNT))
+  for _ in $(seq 1 $SPACES_TO_CREATE); do
+    yabai -m space --create
+  done
+fi
+
+# global settings
+yabai -m config \
+	menubar_opacity 1.0 \
+	mouse_follows_focus on \
+	focus_follows_mouse on \
+	display_arrangement_order default \
+	window_origin_display default \
+	window_placement second_child \
+	window_insertion_point focused \
+	window_zoom_persist on \
+	window_shadow on \
+	window_animation_duration 0.1 \
+	window_animation_easing ease_out_circ \
+	window_opacity_duration 0.1 \
+	active_window_opacity 1.0 \
+	normal_window_opacity 0.90 \
+	window_opacity on \
+	insert_feedback_color $THEME_INSERT_FEEDBACK \
+	split_ratio 0.50 \
+	split_type auto \
+	auto_balance off \
+	bottom_padding 12 \
+	left_padding 12 \
+	right_padding 12 \
+	window_gap 12 \
+	layout bsp \
+	mouse_modifier fn \
+	mouse_action1 move \
+	mouse_action2 resize \
+	mouse_drop_action swap
+
+# Per-display top padding using external_bar (mimics AeroSpace per-monitor padding)
+# Display 1 (1800x1169): Built-in MacBook - 20px top padding
+# Display 2 (1920x1080): Samsung external - 55px top padding
+yabai -m config --display 1 external_bar all:20:0
+yabai -m config --display 2 external_bar all:55:0
+
+# Label spaces to match HyprSpace workspace names (full QWERTY row)
+yabai -m space 1 --label q
+yabai -m space 2 --label w
+yabai -m space 3 --label e
+yabai -m space 4 --label r
+yabai -m space 5 --label t
+yabai -m space 6 --label y
+yabai -m space 7 --label u
+yabai -m space 8 --label i
+yabai -m space 9 --label o
+yabai -m space 10 --label p
+
+# Window rules for floating windows (matching AeroSpace config)
+yabai -m rule --add app="^System Preferences$" manage=off
+yabai -m rule --add app="^System Settings$" manage=off
+yabai -m rule --add title="Shottr" manage=off
+yabai -m rule --add title="^Picture-in-Picture$" manage=off
+yabai -m rule --add title="[Rr]eminder" manage=off
+yabai -m rule --add title="[Nn]ew meeting.*[Mm]icrosoft [Tt]eams" manage=off
+
+# Integrate with Sketchybar (signals)
+# Pass workspace label instead of ID by querying the space
+yabai -m signal --add event=space_changed action="sketchybar --trigger yabai_space_change FOCUSED_WORKSPACE=\$(yabai -m query --spaces --space | jq -r '.label')"
+yabai -m signal --add event=window_focused action="sketchybar --trigger yabai_focus_change FOCUSED_WORKSPACE=\$(yabai -m query --spaces --space | jq -r '.label')"
+yabai -m signal --add event=window_created action="sketchybar --trigger yabai_window_change"
+yabai -m signal --add event=window_destroyed action="sketchybar --trigger yabai_window_change"
+yabai -m signal --add event=window_minimized action="sketchybar --trigger yabai_window_change"
+yabai -m signal --add event=window_deminimized action="sketchybar --trigger yabai_window_change"
+yabai -m signal --add event=application_front_switched action="sketchybar --trigger front_app_switched"
+
+echo "yabai configuration loaded.."

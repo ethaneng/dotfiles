@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# Colors
+active_default=0xfff8f8ff # white
+active_zoomed=0xff7fdbca  # blue
+
 # Sleep here to allow aerospace to fully update fullscreen state
 sleep 0.05
 
@@ -8,9 +12,9 @@ fullscreen_status=$(aerospace list-windows --all --format '%{window-is-fullscree
 
 # Check if any window is fullscreen
 if echo "$fullscreen_status" | grep -q "true"; then
-  # Set border color to blue
-  borders active_color=0xff7fdbca
+	# Set border color to blue
+	borders active_color="$active_zoomed"
 else
-  # Set border color to orange
-  borders active_color=0xffffa500
+	# Set border color to white
+	borders active_color="$active_default"
 fi

@@ -10,6 +10,8 @@ config.show_tab_index_in_tab_bar = true
 config.use_fancy_tab_bar = false
 config.enable_tab_bar = true
 
+config.enable_kitty_keyboard = true
+
 -- Custom Modules
 require("modules/appearance").apply_to_config(config)
 -- require("modules/mappings").apply_to_config(config)
