@@ -47,19 +47,12 @@ return {
     },
   },
   {
-    "nvimtools/none-ls.nvim",
-    opts = function(_, opts)
-      local nls = require("null-ls")
-      opts.sources = opts.sources or {}
-
-      -- sets ups null-ls with the default sources and cfn_lint
-      table.insert(opts.sources, nls.builtins.diagnostics.cfn_lint)
-      table.insert(
-        opts.sources,
-        nls.builtins.diagnostics.cfn_lint.with({
-          filetypes = { "yaml", "json" }, -- only run with yaml and json files
-        })
-      )
-    end,
+    "mfussenegger/nvim-lint",
+    opts = {
+      linters_by_ft = {
+        yaml = { "cfn_lint" },
+        json = { "cfn_lint" },
+      },
+    },
   },
 }

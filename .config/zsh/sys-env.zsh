@@ -23,9 +23,6 @@ else
   export EDITOR='nvim'
 fi
 
-# Neovim configuration
-export NVIM_APPNAME="lazynvim"
-
 # History timestamp format
 HIST_STAMPS="dd/mm/yyyy"
 
