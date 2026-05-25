@@ -5,3 +5,5 @@
 .config/zsh/.zcompdump*
 .aider*
 .config/zsh/environment.zsh
+**/oauth_creds.json
+**/.env
