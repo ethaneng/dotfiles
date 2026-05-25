@@ -7,3 +7,9 @@
 .config/zsh/environment.zsh
 **/oauth_creds.json
 **/.env
+.gemini/
+**/.aws/credentials
+**/*.pem
+**/*.key
+**/id_rsa*
+**/id_ed25519*
