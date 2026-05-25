@@ -4,6 +4,16 @@
     "Hub": {
       "type": "remote",
       "url": "http://localhost:37373/mcp"
+    },
+    "playwright": {
+      "type": "local",
+      "command": [
+        "npx",
+        "-y",
+        "@playwright/mcp@latest",
+        "--headless"
+      ],
+      "enabled": true
     }
   }
 }

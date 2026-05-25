@@ -5,7 +5,7 @@ export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 export PATH=/opt/homebrew/bin:$PATH
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
-export PATH="$HOME/.claude/local:$PATH"
+# export PATH="$HOME/.claude/local:$PATH"
 
 # JAVA (for react native: https://reactnative.dev/docs/set-up-your-environment?platform=android)
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home

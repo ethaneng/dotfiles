@@ -2,3 +2,6 @@ config-file = theme
 config-file = keybinds
 
 background-opacity = 1.00
+
+window-padding-x = 4
+window-padding-y = 4

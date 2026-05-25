@@ -5,9 +5,10 @@ require("items.outlook")
 -- require("items.widgets")
 
 -- Auto-detect window manager and load appropriate workspace widget
--- Priority: rift > yabai > aerospace
+-- Priority: omniwm > rift > yabai > aerospace
 local function detect_wm()
 	local checks = {
+		{ name = "omniwm", cmd = "pgrep -x OmniWM" },
 		{ name = "rift", cmd = "pgrep -x rift" },
 		{ name = "yabai", cmd = "pgrep -x yabai" },
 	}
@@ -24,7 +25,9 @@ end
 
 local wm = detect_wm()
 
-if wm == "rift" then
+if wm == "omniwm" then
+	require("items.omniwm")
+elseif wm == "rift" then
 	require("items.rift")
 elseif wm == "yabai" then
 	require("items.yabai")

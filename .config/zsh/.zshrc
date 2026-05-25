@@ -31,9 +31,6 @@ setopt AUTO_CD
 # Run 'nerdfetch' manually when you want to see system info
 # nerdfetch
 
-
-alias claude="/Users/ethan/.claude/local/claude"
-
 export PATH=$PATH:/Users/ethan/.spicetify
 export PATH="/opt/homebrew/opt/postgresql@17/bin:$PATH"
 
