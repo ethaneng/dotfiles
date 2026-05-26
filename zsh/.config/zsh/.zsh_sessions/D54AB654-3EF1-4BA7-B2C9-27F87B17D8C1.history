@@ -1,0 +1,1039 @@
+rift service restart
+rift-cli service restart
+brew services restart rift
+exit
+nvim .
+z senteli
+z sentelli
+ls
+nvim .
+.aws
+nvim .
+caffeinate
+z dot
+nvim .config
+opencode
+clear
+opencode
+gh auth refresh -s project:read
+gh auth refresh -s read:project
+exit
+pnpm run dev
+pnpm run dev
+clear
+pnpm run dev
+exit
+opencode
+nvim .
+nvim 
+exit
+mdfind -name 'monocle' | grep -E '(Library|Containers|Group Containers|Caches|Preferences)'
+rm -rf /Users/ethan/Library/Application Scripts/dk.heyiam.monocle /Users/ethan/Library/Containers/dk.heyiam.monocle/Data/Library/HTTPStorages/dk.heyiam.monocle
+exit
+docker compose up -d
+z sentelli
+docker compose down
+..
+sentinel-agent
+docker compose up 
+nvim dock
+nvim docker-compose.yml
+docker compose up
+docker rm -rf crawl4ai
+docker rm -f crawl4ai
+docker compose up 
+exit
+uv venve --python 3.11
+uv venv --python 3.11
+source .venv/bin/activate
+uv sync
+uvx browser-use install
+cp .env.example .env
+uv run sentinel-agent --task-input examples/vas-task-input.json --schema etf-schema.json
+uv run sentinel-agent --task-input examples/vas-task-input.json --schema etf-schema.json
+uv run sentinel-agent --task-input examples/vas-task-input.json --schema etf-schema.json
+uv run sentinel-agent --task-input examples/vas-task-input.json --schema etf-schema.json
+uv run sentinel-agent --task-input examples/vas-task-input.json --schema etf-schema.json
+uv run sentinel-agent --task-input examples/vas-task-input.json --schema etf-schema.json
+uv run sentinel-agent --task-input examples/vas-task-input.json --schema etf-schema.json
+uv run sentinel-agent --task-input examples/vas-task-input.json --schema etf-schema.json
+uv run sentinel-agent --task-input examples/vas-task-input.json --schema etf-schema.json
+uv run sentinel-agent --task-input examples/vas-task-input.json --schema etf-schema.json
+..
+mkdir sentinel-agent && cd sentinel-agent
+opencode
+opencode
+brew services stop rift
+brew ls omniwm
+brew tap BarutSRB/tap
+clear
+brew ls omniwm
+brew install omniwm
+omniwm
+brew services list 
+ghostty +help
+ghostty +list-keybinds
+ts
+brew services list
+rift service
+rift service stop
+skhd
+skhd --help
+skhd --stop-service
+skhd -h
+brew services stop borders
+btop
+btop
+brew services stop sketchybar
+btop
+y
+y
+exit
+which omniwm
+brew info omwniwm
+brew info omniwm
+z .config/omniwm
+nvim .
+brew upgrade omniwm
+omniqm
+omniwm
+killall omniwm
+killall OmniWM
+defaults write com.barut.OmniWM settings.hiddenBar.isCollapsed -bool false\
+defaults write com.barut.OmniWM settings.workspaceBar.position -string belowMenuBar\
+defaults write com.barut.OmniWM settings.workspaceBar.notchAware -bool false\
+
+killall OmniWM
+pnpm run db:reset
+exit
+curl -i http://localhost:11235/mcp/schema
+curl -i http://localhost:11235/mcp/sse
+docker compose ps
+curl -i http://localhost:11235/mcp/schema
+nvim .
+nvim .
+clear
+nvim .
+..
+ls
+sentinel-agent
+nvim .
+ls
+nvim .
+opencode
+z opencode
+opencode
+caffeinate
+caffeinate
+pnpm dev
+pnpm run db:reset
+pnpm run start:dev
+pnpm run start:dev
+pnpm run start:dev
+pnpm run start:dev
+pnpm run start:dev
+pnpm run start:dev
+pnpm run start:dev
+./scripts/db-reset.sh
+pnpm run start:dev
+exit
+git status
+ls
+..
+sentinel-agent
+git status
+..
+exit
+brew install --cask opencode-desktop
+btop
+exit
+z local
+exit
+z ~/.local/share/opencode/log
+ls
+nvim .
+z /Users/ethan/.config/opencode/plugins/superpowers.js
+z /Users/ethan/.config/opencode/
+nvim .
+btop
+opencode
+exit
+nvim .
+nvim .
+lazygit
+lazygit
+lazygit
+ls
+lazygit
+ls
+..
+mkdir Sentelligence2
+Sentelligence2
+git clone https://github.com/Sentinel-Financial-Group/Sentelligence.git .
+ls
+opencode
+ts
+nvim .
+exit
+nvim .
+z blog
+nvim .
+lazygit .
+lazygit 
+z opencode
+nvim .
+z sent-agent
+z -agent
+nvim opencode.json
+nvim .
+pnpm run dev
+pnpm run dev
+claude --teleport session_0192EqM1RANF181UUFqVxJXQ
+claude
+claude --teleport session_0192EqM1RANF181UUFqVxJXQ
+lazygit
+lazygit
+claude --teleport session_0192EqM1RANF181UUFqVxJXQ
+z .config
+..
+..
+.config
+ls
+opencode
+nvim opencode
+opencode
+pnpm dev
+z dot
+lazygit
+z blog
+nvim .
+z -agent
+nvim opencode.json
+z .config/opencode
+nvim .
+opencode
+opencode
+..
+..
+stow .
+z opencode
+ls
+nvim .
+caffeinate
+pnpm run dev
+pnpm run start
+pnpm run 
+pnpm run start:dev
+pnpm run start:dev
+pnpm run start:dev
+z -agent
+pnpm run start:dev
+clear
+pnpm run start:dev
+clear
+pnpm run start:dev
+clear
+pnpm run start:dev
+clear
+pnpm run start:dev
+clear
+pnpm run start:dev
+clear
+pnpm run start:dev
+pnpm run start:dev
+pnpm run db:reset
+pnpm run start:dev
+clear
+pnpm run start:dev
+pnpm run start:dev
+pnpm run start:dev
+clear
+pnpm run db:reset
+pnpm run start:dev
+pnpm run
+nvim .
+/Users/ethan/repos/OmniWM/.build/arm64-apple-macosx/debug/OmniWM ; exit;
+/Users/ethan/repos/OmniWM/.build/arm64-apple-macosx/debug/OmniWM ; exit;
+/Users/ethan/repos/OmniWM/.build/arm64-apple-macosx/debug/OmniWM ; exit;
+btop
+exit
+pnpm run
+pnpm run dev
+pnpm run dev
+pnpm run dev
+btop
+exit
+cat opencode.json
+exit
+opencode
+opencode
+nvim .
+opencode
+ opencode -s ses_319c1415dffebRGm0U74jRkPBJ
+opencode -s ses_319c1415dffebRGm0U74jRkPBJ
+clear
+which omniwm
+which OmniWM
+clear
+exit
+nvim .
+nvim .
+exit
+lazygit
+git remote add origin https://github.com/diversus-au/western-power-image-classification.git\
+git branch -M main\
+git push -u origin main
+lazygit
+rg account
+clear
+rg 578381014716
+clear
+exit
+ls
+fine_tune
+ls
+lazygit
+claude
+opencode
+exit
+aws_cli
+exit
+ts
+ts
+z alea
+pnpm run dev
+pnpm run dev
+pnpm run dev
+z omni
+..
+z respos
+z repos
+ls
+OmniWM
+clear
+nvim .
+z repos
+mkdir alea-avm
+alea-avm
+git init .
+brew upgrade OmniWM
+brew upgrade OmniWM
+clear
+nvim .
+z -agent
+pnpm run start:dev
+pnpm run start:dev
+pnpm run start:dev
+pnpm run start:dev
+pnpm run db:reset
+pnpm run start:dev
+pnpm run db:reset
+pnpm run db:reset
+pnpm run start:dev
+exit
+z western
+ls
+fine_tune
+ls
+nvim README.md
+btop
+..
+rg LiteLLM
+Sentelligence
+nvim .
+brew upgrade OmniWM
+pnpm run start:dev
+pnpm run db:reset
+pnpm run start:dev
+pnpm run start:dev
+clear
+pnpm run db:reset
+pnpm run start:dev
+pnpm run db:reset
+pnpm run start:dev
+pnpm run start:dev
+pnpm run db:reset
+pnpm run start:dev
+pnpm run db:reset
+pnpm run start:dev
+pnpm run db:reset
+pnpm run start:dev
+pnpm run start:dev
+pnpm run start:dev
+pnpm run start:dev
+pnpm run start:dev
+pnpm run start:dev
+pnpm run start:dev
+pnpm run start:dev
+pnpm run start:dev
+pnpm run start:dev
+pnpm run start:dev
+pnpm run start:dev
+pnpm run db:reset
+pnpm run start:dev
+pnpm run db:reset
+pnpm run start:dev
+ear
+clear
+pnpm run start:dev
+lazygit
+pnpm run db:reset
+pnpm run start:dev
+clear
+pnpm run start:dev
+clear
+btop
+z .aws
+nvim .
+opencode
+z repos
+careres
+nvim opencode.json
+nvim .
+npm run dev
+npm i
+npm run dev
+npm run dev
+node -v
+npm i
+npm run dev
+npm rebuild
+npm run de
+npm run dev
+npm run dev
+npm rebuild
+npm run dev
+npm run dev
+z opencode
+nbim .
+nvim .
+nvim .
+npm run dev
+brew tap jeffreywildman/homebrew-virt-manager\
+brew install virt-viewer\
+virt-viewer --version
+z fine
+nvim .
+which OmniWM
+OmniWM
+brew list | grep OmniWM
+brew list | grep OmniWm
+brew list | grep omni
+which omniwm
+brew upgrade omniwm
+omniwm
+brew upgrade omniwm
+cd ../..
+./scripts/start-crawler-agent.sh
+pnpm run dev
+pnpm run dev
+clear
+pnpm run dev
+cl;ear
+clear
+pnpm run db:reset
+pnpm run db:reset
+pnpm run dev
+pnpm run dev
+cd apps/crawler-api && bun --env-file=.env --watch src/index.ts
+cd apps/crawler-api && bun --env-file=.env --watch src/dispatcher.ts
+cd apps/crawler-admin && bun run dev -- --host 0.0.0.0
+z -agent
+lazygit
+nvim .
+skhd --stop-service
+brew services stop skhd
+z opencode
+z finte_tune
+z fine_tune
+claude
+# From your Mac, SSH into the LXC (via Proxmox or direct)\
+ssh root@192.168.0.208\
+\
+# Then run:\
+cd /opt/openclaw && source .env\
+docker compose run --rm openclaw-cli configure --section model\
+
+ssh root@192.168.0.208
+claude setup-token
+..
+ls
+ls reference_images
+ls test_images
+ls docs
+..
+ls
+WP_Sample_Inputs
+ls
+50_validation_set
+ls
+docker pull conceptkernel/jena-fuseki:6.0.0
+docker pull conceptkernel/jena-fuseki:6.0.0-1
+docker run -d \\
+  --name jena-fuseki \\
+  -p 3030:3030 \\
+  conceptkernel/jena-fuseki:6.0.0-1
+z fine_tune
+ls
+results
+ls
+claude
+z -agent
+nvim .
+brew install --cask t3-code
+claude
+az info
+az --help
+az account
+az account list
+ls
+cd apps/
+ls
+control-tower-api
+ls
+pnpm run dev
+nvim .
+nvim .
+cd ../..
+pnpm dev
+pnpm dev
+pnpm dev
+pnpm dev
+pnpm dev
+pnpm dev
+..
+sentinel-agent
+ls
+pnpm dev
+pnpm dev
+pnpm run
+pnpm run start:dev
+pnpm run start:dev
+ls
+apps/
+ls
+crawler-api
+ls
+pnpm run dev
+pnpm run
+z control
+pnpm dev
+pnpm dev
+npx skills add https://github.com/composiohq/awesome-claude-skills --skill tailored-resume-generator
+z docs
+l
+nvim .
+z document
+nvim .
+z repos
+mkdir sentelligence-control-tower
+sentelligence-control-tower
+nvim .
+z dot
+ls
+.config
+nvim .
+z repos
+sentelligence-control-tower
+nvim .
+curl -X POST http://localhost:8088/responses -H "Content-Type: application/json" -d '{"input":"...","stream":false}'
+z mosaic
+nvim .
+z moscaic
+z mosa
+lazygit
+lazygit
+z control
+lazygit
+nvim .
+claude
+az login --scope https://ai.azure.com/.default\
+
+clear
+ control
+z control
+ls
+apps/
+ls
+foundry
+foundry-hosted
+ls
+agents
+ls
+..
+workflows
+ls
+foundry-agent-orchestrator
+python main.py
+ls
+ls -la
+source .venv/bin/activate
+python3 main.py
+python3 main.py
+z contorl
+z control
+ls
+apps/
+ls
+foundry-hosted
+workflows
+ls
+foundry-agent-orchestrator
+ls
+source .venv/bin/activate
+python3 main.py
+az login
+clearu
+clear
+clear
+npx skills add https://github.com/composiohq/awesome-claude-skills --skill tailored-resume-generator
+clear
+brew upgrade OmniWM
+# Install using Homebrew\
+brew install --cask codex
+codex
+codex
+codex login
+z mosaic
+aws configure sso
+claude
+nvim 
+pipx install lazyviewer
+z control
+lazyviewer
+pipx uninstall lazyviewer
+exit
+btop
+brew upgrade omniwm
+exit
+ts
+# In a separate terminal, send a test request:\
+curl -sS http://localhost:8088/responses \\
+  -H "Content-Type: application/json" \\
+  -X POST \\
+  -d '{\
+    "input": "The VAS ETF",\
+    "stream": false\
+  }' | python -m json.tool
+curl -sS http://localhost:8088/responses \\
+  -H "Content-Type: application/json" \\
+  -X POST \\
+  -d '{\
+    "input": "The VAS ETF",\
+    "stream": false\
+  }' | python -m json.tool
+curl -sS http://localhost:8088/responses \\
+  -H "Content-Type: application/json" \\
+  -X POST \\
+  -d '{\
+    "input": "The VAS ETF",\
+    "stream": false\
+  }' | python3 -m json.tool
+azd ai agent init --project-id /subscriptions/ce2f4449-f63b-4555-9b45-47d89d2fac5b/resourceGroups/sentelligence/providers/Microsoft.CognitiveServices/accounts/Sentelligence-AI/projects/sentelligence
+brew install azd
+azd 
+azd auth
+azd auth login
+azd ai agent init --project-id /subscriptions/ce2f4449-f63b-4555-9b45-47d89d2fac5b/resourceGroups/sentelligence/providers/Microsoft.CognitiveServices/accounts/Sentelligence-AI/projects/sentelligence
+cd ../..
+azd ai agent init --project-id /subscriptions/ce2f4449-f63b-4555-9b45-47d89d2fac5b/resourceGroups/sentelligence/providers/Microsoft.CognitiveServices/accounts/Sentelligence-AI/projects/sentelligence
+azd up
+azd up
+clear
+lazygit
+nvim .
+clear
+azd 
+laxygit
+lazygit
+clear
+azd up
+azd deploy entity-research-pipeline
+lazygit
+azd deploy entity-research-pipeline
+azd deploy entity-research-pipeline
+azd deploy entity-research-pipeline
+azd deploy entity-research-pipeline
+azd deploy entity-research-pipeline
+azd deploy entity-research-pipeline
+lazygit
+btop
+exit
+pnpm dev
+pnpm dev
+exit
+btop
+exit
+ts
+btop
+pnpm dev
+clear
+pnpm dev
+pnpm dev
+pnpm dev
+pnpm dev
+pnpm dev
+pnpm dev
+pnpm dev
+pnpm dev
+pnpm dev
+ls
+ls -la
+ls .git
+ls .git/worktrees
+cd .git/worktrees/tidy-orchid
+pnpm dev
+..
+..
+..
+pnpm dev
+pnpm dev
+clear
+nvim .
+brew upgrade omniwm
+skhd --stop-service
+btop
+z control
+pnpm run test
+exi
+exit
+exit
+pi
+npm install -g @mariozechner/pi-coding-agent
+pi
+pi install https://github.com/umputun/revdiff
+revdiff
+brew install umputun/apps/revdiff
+revdiff
+pi
+lazygit
+revdiff
+git status
+pi
+lazygit
+revdiff
+pi
+exit
+btop
+exit
+btop
+exit
+z .aws
+nvim .
+pi
+pi
+z control
+which pi
+which amp
+which omp
+bun uninstall -g @oh-my-pi/pi-coding-agent
+omp
+sketchybar
+brew services start sketchybar
+pnpm db:reset
+z mosaic
+aws-profile 
+aws cloudformation delete-stack --stack-name MosaicPipelineStack
+aws sso login
+aws cloudformation delete-stack --stack-name MosaicPipelineStack
+aws cloudformation delete-stack --stack-name MosaicPipelineStack
+aws cloudformation delete-stack --stack-name MosaicPipelineStack
+exit
+lazygit
+revdiff
+lazygit
+lazygit
+lazygit
+ttl
+..
+control-tower-dev
+ls
+sentelligence-control-tower-dev
+lazygit
+exit
+nvim .
+diffprev
+prevdiff
+diffview
+revdiff
+revdiff
+revdiff
+nvim
+exit
+exit
+borders
+borders --help
+man borders
+borders active_color=0xff00ff00
+z borders
+z .config
+nvim .
+borders
+nvim .
+man borders
+brew services start borders
+btop
+exit
+btop
+exit
+skhd --stop-service
+exit
+revdiff
+pnpm db:reset
+lazygit
+lazygit
+nvim .
+revdiff
+lazygit
+revdiff
+lazygit
+revdiff
+lazygit
+nvim 
+pnpm db:seed
+pnpm run db:
+pnpm run
+pnpm db:reset
+pnpm db:reset
+pnpm db:reset
+pnpm dev
+z downloads
+nvim .
+z document
+nvim .
+claude
+which claude
+claude --help
+claude update
+claude
+z control
+claude
+exit
+gh auth login
+pnpm db:reset
+exit
+pnpm i
+pnpm dev
+pnpm dev
+pnpm dev
+pnpm dev
+pnpm dev
+pnpm dev
+pnpm db:reset
+pnpm db:
+pnpm run
+pnpm dev
+pnpm dev
+pnpm i
+pnpm dev
+pnpm dev
+pnpm dev
+pnpm db:reset
+pnpm dev
+pnpm db:reset
+clear
+pnpm dev
+pnpm dev
+pnpm dev
+pnpm dev
+pnpm dev
+exit
+btop
+ts
+btop
+btop
+skhd --stop-service
+exit
+z downloads
+ls
+code .
+Sentelligence_docs
+god
+god
+which god
+man god
+a
+god_laws
+clear
+omnictl
+omniwmctl
+brew services list 
+brew services restart sketchybar
+btop
+exit
+btop
+exit
+z invest2
+code .
+skhd --stop-service
+ts
+which opencode
+brew upgrade opencode
+exit
+z downloads
+ls
+Sentelligence_docs
+nvim .
+code .
+exit
+mkdir -p ~/.claude/skills/drawio
+claude
+claude mcp add drawio -- npx -y @drawio/mcp
+claude mcp add --help
+claude mcp add -s user drawio -- npx -y @drawio/mcp
+exit
+brew upgrade claude
+claude upgrade
+brew upgrade opencode
+exit
+npx skills@latest add mattpocock/skills/grill-me
+npx skills@latest add mattpocock/skills/ubiquitous-language
+npx skills@latest add mattpocock/skills/to-prd
+npx skills@latest add mattpocock/skills/to-issues
+npx skills@latest add mattpocock/skills/request-refactor-plan
+npx skills@latest add mattpocock/skills/request-refactor-plan
+brew services stop skhd
+skhd --stop-service
+z skhd
+nvim .
+yabai --stop-service
+brew services stop yabai
+btop
+brew services restart sketchybar
+exit
+brew upgrade opencode
+opencode
+exit
+docs/
+nvim PRD_Phase1.md
+exit
+btop
+exit
+exit
+npx skills@latest add mattpocock/skills
+exit
+btop
+exit
+claude
+exit
+btop
+exit
+pnpm dev
+pnpm dev
+pnpm dev
+pnpm dev
+ts
+pnpm dev
+pnpm dev
+exit
+z control
+nvim 
+ts
+nvim .
+exit
+lazygit
+exit
+omniwmctl
+z control
+pnpm docker:up
+aws-profile
+aws sso login
+exit
+z control
+pnpm db:reset
+omniwmctl
+omniwmctl query monitors
+omniwmctl query bundles
+omniwmctl query windows
+omniwmctl window summon-right â€ƒ¼com.microsoft.teams2â€ƒ½
+omniwmctl window summon-right -help
+omniwmctl window summon-right -h
+omniwmctl window summon-right --help
+omniwmctl window summon-right
+omniwmctl query window
+omniwmctl query windows
+omniwmctl window summon-right Ghostty
+omniwmctl window summon-right --window ghostty
+omniwmctl window summon-right --window 
+omniwmctl query windows
+omniwmctl window summon-right ow_ODgyNEQzQjYtNkI5Ny00NzFBLUEwMzMtRTI5QkEyQzBDMjg2Ojk4NToxMjE
+BUNDLE_ID="com.t3tools.t3code"; omniwmctl window summon-right "$(omniwmctl query windows --bundle-id "$BUNDLE_ID" --format tsv | tail -n +2 | head -1 | awk -F'\t' '{print $1}')"\
+
+skhd --stop-service
+brew services stop skhd
+exit
+api
+lazygit
+git push origin --follow-tags
+git push origin release/v2.1.2
+z western
+claude
+fine_tune
+claude
+lazygit
+z control
+ts
+pnpm dev
+pnpm dev
+pnpm dev
+z rebuild
+clear
+web
+lazygit
+git pull
+git auth
+git --help
+gh auth login
+gh auth login
+git fetch
+Ã¥zygt
+lazygit
+lazygit
+git push --tags
+git push origin release/v2.1.2
+lazygit
+aws sso login
+aws sso login --profile western-power\
+
+brew install 7z
+exit
+brew upgrade omniwm
+exit
+brew service stop borders
+brew services stop borders
+brew services start bordres
+brew services start borders
+exit
+brew services stop sketchybar
+exit
+z control
+nvim .
+..
+t3code
+ls
+mkdir t3code
+t3code
+git clone .
+git clone https://github.com/pingdotgg/t3code .
+omniwmctl 
+omniwmctl command toggle-hidden-bar
+omniwmctl command toggle-workspace-bar
+omniwmctl command toggle-workspace-bar
+omniwmctl command toggle-hidden-bar
+which omniwmctl
+brew upgrade omniwmctl
+clear
+omniwmctl
+omniwmctl
+brew services stop borders
+which ffmpeg
+exit
+z downl
+splat_demo
+ffmpeg -c:v hevc -i ./IMG_9881_1.MOV -vf "fps=2" -q:v 2 frame_%04d.jpg
+ls
+yazi
+finder .
+explorere .
+exit
+/Users/ethan/Downloads/brush-app-aarch64-apple-darwin/brush_app ; exit;
